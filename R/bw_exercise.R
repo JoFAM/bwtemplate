@@ -14,7 +14,21 @@
 #' rmarkdown::draft("MyArticle.Rmd", template = "bw_exercise",
 #'                   package = "bwtemplate")
 #' }
+#' @import rmarkdown
 #' @export
 bw_exercise <- function(..., keep_tex = TRUE){
-  pdf_document_format("bw_exercise", ..., keep_tex = keep_tex)
+
+  res <- system.file(
+    "rmarkdown","templates","bw_exercise","resources",
+    "template.tex",
+    package = "bwtemplate"
+  )
+
+  if(res == "") stop("Couldn't find bw_exercise", call. = FALSE)
+
+  fmt <- rmarkdown::pdf_document(..., keep_tex = keep_tex,
+                                 template = res)
+  fmt$inherits <- "pdf_document"
+  fmt
+
 }
