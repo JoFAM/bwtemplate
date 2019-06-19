@@ -1,12 +1,16 @@
 Package: bwtemplate
-Title: What the Package Does (One Line, Title Case)
+Title: R Markdown template collection for UGent
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Joris",
+           family = "Meys",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+           email = "Joris.Meys@UGent.be")
+Description: This collection of templates can be used at the faculty of
+    bioscience engineering of Ghent University. It helps create documents
+    in RMarkdown with the correct logo and settings.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports: rmarkdown
+RoxygenNote: 6.1.1
